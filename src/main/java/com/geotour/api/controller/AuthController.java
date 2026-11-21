@@ -37,22 +37,22 @@ public class AuthController {
             @ApiResponse(
                     responseCode = "201",
                     description = "Usuario registrado correctamente",
-                    content = @Content(schema = @Schema(implementation = AuthResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = AuthResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Datos de registro invalidos o errores de validacion",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "409",
                     description = "El correo electronico ya esta registrado",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirements(value = {})
@@ -71,22 +71,22 @@ public class AuthController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Autenticacion correcta",
-                    content = @Content(schema = @Schema(implementation = AuthResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = AuthResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Datos de acceso invalidos o errores de validacion",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Credenciales invalidas",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirements(value = {})

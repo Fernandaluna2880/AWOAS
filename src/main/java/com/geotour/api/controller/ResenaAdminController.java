@@ -40,27 +40,27 @@ public class ResenaAdminController {
             @ApiResponse(
                     responseCode = "400",
                     description = "Identificador invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_ADMIN",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Resena no encontrada",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")

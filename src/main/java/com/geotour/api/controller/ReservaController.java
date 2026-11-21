@@ -45,37 +45,37 @@ public class ReservaController {
             @ApiResponse(
                     responseCode = "201",
                     description = "Reserva creada",
-                    content = @Content(schema = @Schema(implementation = ReservaResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ReservaResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Datos de la reserva invalidos o capacidad insuficiente",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_USER",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Destino no encontrado",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "409",
                     description = "Conflicto al crear la reserva",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")
@@ -96,22 +96,22 @@ public class ReservaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Listado de reservas del usuario autenticado",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = ReservaResponseDTO.class)))
+                    content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ReservaResponseDTO.class)))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_USER",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")
@@ -128,32 +128,32 @@ public class ReservaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Reserva cancelada",
-                    content = @Content(schema = @Schema(implementation = ReservaResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ReservaResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Identificador invalido o reserva ya cancelada",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "La reserva pertenece a otro usuario",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Reserva no encontrada",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")
@@ -174,22 +174,22 @@ public class ReservaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Listado completo de reservas",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = ReservaResponseDTO.class)))
+                    content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ReservaResponseDTO.class)))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_ADMIN",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")
@@ -207,27 +207,27 @@ public class ReservaController {
             @ApiResponse(
                     responseCode = "400",
                     description = "Identificador invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_ADMIN",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Reserva no encontrada",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")

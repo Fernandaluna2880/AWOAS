@@ -33,27 +33,27 @@ public class ClimaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Clima actual del destino",
-                    content = @Content(schema = @Schema(implementation = ClimaResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ClimaResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Identificador de destino invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Destino no encontrado",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "502",
                     description = "Error de integracion con el proveedor del clima",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirements(value = {})

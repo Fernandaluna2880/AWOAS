@@ -44,22 +44,22 @@ public class ResenaController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Listado de resenas del destino",
-                    content = @Content(array = @ArraySchema(schema = @Schema(implementation = ResenaResponseDTO.class)))
+                    content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ResenaResponseDTO.class)))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Identificador de destino invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Destino no encontrado",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirements(value = {})
@@ -79,37 +79,37 @@ public class ResenaController {
             @ApiResponse(
                     responseCode = "201",
                     description = "Resena creada",
-                    content = @Content(schema = @Schema(implementation = ResenaResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResenaResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Datos de la resena o identificador invalidos",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "401",
                     description = "Token ausente o invalido",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "403",
                     description = "El usuario no tiene rol ROLE_USER",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "Destino no encontrado",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "409",
                     description = "El usuario ya publico una resena para este destino",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             ),
             @ApiResponse(
                     responseCode = "500",
                     description = "Error interno del servidor",
-                    content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
     @SecurityRequirement(name = "bearerAuth")

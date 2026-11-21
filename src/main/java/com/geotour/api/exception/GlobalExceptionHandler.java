@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "400",
             description = "Errores de validacion en la peticion",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponseDTO> handleValidation(
@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "400",
             description = "Errores de validacion en la peticion",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ErrorResponseDTO> handleConstraintViolation(
@@ -80,7 +80,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "400",
             description = "El cuerpo de la peticion no es valido",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorResponseDTO> handleUnreadableMessage(
@@ -98,7 +98,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "400",
             description = "Parametro de peticion invalido",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponseDTO> handleTypeMismatch(
@@ -116,7 +116,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "404",
             description = "Recurso no encontrado",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponseDTO> handleNotFound(
@@ -129,7 +129,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "409",
             description = "Conflicto con el estado actual del recurso",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(ConflictException.class)
     public ResponseEntity<ErrorResponseDTO> handleConflict(
@@ -142,7 +142,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "400",
             description = "Solicitud invalida",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<ErrorResponseDTO> handleBadRequest(
@@ -155,7 +155,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "401",
             description = "Credenciales invalidas",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ErrorResponseDTO> handleBadCredentials(
@@ -173,7 +173,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "401",
             description = "No autenticado o token invalido",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<ErrorResponseDTO> handleAuthentication(
@@ -191,7 +191,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "403",
             description = "No tiene permisos para realizar esta accion",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ErrorResponseDTO> handleAccessDenied(
@@ -209,7 +209,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "409",
             description = "La operacion viola una restriccion de integridad de datos",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponseDTO> handleDataIntegrity(
@@ -228,7 +228,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "502",
             description = "Error de integracion con servicio externo",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(IntegrationException.class)
     public ResponseEntity<ErrorResponseDTO> handleIntegration(
@@ -242,7 +242,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "405",
             description = "Metodo HTTP no soportado para esta ruta",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ErrorResponseDTO> handleMethodNotSupported(
@@ -260,7 +260,7 @@ public class GlobalExceptionHandler {
     @ApiResponse(
             responseCode = "500",
             description = "Ocurrio un error inesperado",
-            content = @Content(schema = @Schema(implementation = ErrorResponseDTO.class))
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
     )
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDTO> handleGeneric(
